@@ -3,6 +3,7 @@ const env = require('yargs').argv.mode;
 const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 let devtool, mode;
 
@@ -31,6 +32,10 @@ let plugins = [
   //   filename: "./public/index.html",
   //   excludeChunks: [ 'server' ]
   // })
+  new CopyWebpackPlugin([{
+    from:'./public', to:'./'
+
+  }])
 ];
 
 

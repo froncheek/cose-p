@@ -3,7 +3,9 @@ import React from 'react';
 class App extends React.Component{
     render(){
         return(
-            <nav>FABS</nav>
+            <nav className="nav-bar">
+                
+            </nav>
         )
 
     }

@@ -2,12 +2,16 @@
   "name": "cose-p",
   "version": "1.0.0",
   "description": "Cose",
-  "main": "index.js",
+  "main": "./dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.server.config.js --mode development",
-    "build": "rimraf ./dist && webpack --config webpack.server.config.js --mode production",
-    "serve": "http-server ./dist"
+    "start": "rimraf ./dist && concurrently \"npm:start:*\" \"npm:serve\"",
+    "start:1server": "webpack --config webpack.server.config.js --mode production --open --hot --watch",
+    "start:2client": "webpack --config webpack.client.config.js --mode production --watch",
+    "build": "rimraf ./dist && concurrently npm:build:*",
+    "build:1server": "webpack --config webpack.server.config.js --mode production",
+    "build:2client": "webpack --config webpack.client.config.js --mode production",
+    "serve": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,7 @@
   "homepage": "https://github.com/froncheek/cose-p#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "http-server": "^0.11.1",
     "mongoose": "^5.6.13",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
@@ -33,10 +38,17 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.2",
     "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "nodemon": "^1.19.2",
     "rimraf": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0",

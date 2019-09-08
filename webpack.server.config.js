@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 
-let devtool, mode;
+let devtool, mode, watch;
 
 /*,
   {
@@ -41,6 +41,7 @@ let plugins = [
 if (env === 'production') {
   mode = 'production';
 } else if (env === 'development') {
+  watch = true,
   mode = 'development';
   devtool = 'inline-source-map';
 }

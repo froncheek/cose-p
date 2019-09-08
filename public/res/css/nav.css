@@ -1,0 +1,88 @@
+.nav-bar {
+  height: 110px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(153, 150, 153, 0.15);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(153, 150, 153, 0.15);
+  box-shadow: 0px 2px 5px 0px rgba(153, 150, 153, 0.15);
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.nav-logo {
+  background-image: url("../images/logo.png");
+  width: 14%;
+  background-repeat: no-repeat;
+}
+
+.nav-search-bar-wrap {
+  width: 45%;
+}
+
+.nav-search-input {
+  width: 70%;
+  border: forestgreen solid 3px;
+  height: 30px;
+}
+
+.nav-icons {
+  width: 15%;
+  padding-top: 45px;
+  padding-left: 20px;
+}
+
+.fa-user {
+  size: 3px;
+}
+
+.nav-icons section {
+  float: left;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #3B945E;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus {
+  color: #3B945E;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #3B945E;
+  background: #3B945E;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.cartButton {
+  width: 40px;
+  height: 36px;
+  text-align: center;
+  color: #3B945E;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  padding-top: 35px;
+}
+
+/*# sourceMappingURL=nav.css.map */

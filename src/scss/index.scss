@@ -8,7 +8,7 @@ body {
     font-size: 1.6em;
     font-weight: normal;
     line-height: 1;
-    color: #3a3a3a;
+    background-color:  #fafafa;
     margin: 0px;
     width: 100%;
 }
@@ -55,10 +55,7 @@ main article {
     margin: 10px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-  }
+
 
 @font-face {
     font-family: Gidole;
@@ -67,10 +64,6 @@ main article {
     
 }
 
-.centered {
-    display: flex;
-    justify-content: center;
-}
 
 
 .item {

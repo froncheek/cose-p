@@ -1,12 +1,32 @@
 import React from 'react';
-import Supplies from './Supplies';
+import ItemContainer from './ItemContainer';
+import Item from './Item';
 
 class Main extends React.Component{
     render() {
         return(
             <main className="centered">
                 <article>
-                    <Supplies />
+                    <section className="banner centered"><h1>Banner</h1></section>
+                    <ItemContainer>
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                    </ItemContainer>
+                    <ItemContainer>
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                    </ItemContainer>
                 </article>
             </main>
         )

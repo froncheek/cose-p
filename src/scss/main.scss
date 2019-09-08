@@ -15,6 +15,17 @@ $text-color: #3B945E;
   background-color: white;
 }
 
+.banner section{
+  float: left;
+  width: 23%;
+  padding-left:10px;
+  padding-top:10px;
+  color: $text-color;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
 .categories-title{
   padding-left:15px !important;
   padding-top:15px !important;
@@ -51,5 +62,10 @@ height:100%;
 
 .category-wrap{
   height:100%;
+  
+}
+
+.fa-plug{
+
   
 }

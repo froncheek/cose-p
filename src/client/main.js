@@ -12,12 +12,10 @@ class Main extends React.Component{
                 <article>
                     <section className="banner">
                         <div className="categories-title">CATEGORIES</div>
-                        <CategoryContainer>
-                            <Category>Cat 1</Category>
-                            <Category>Cat 1</Category>
-                            <Category>Cat 1</Category>
-                            <Category>Cat 1</Category>
-                        </CategoryContainer>
+                        <section><i className="fas fa-plug fa-8x"></i><div>ENERGY</div></section>
+                        <section><i className="fas fa-tractor fa-8x"></i><div>AGRICULTURE</div></section>
+                        <section><i className="fas fa-gavel fa-8x"></i><div>METAL</div></section>
+                        <section><i className="fas fa-chart-line fa-8x"></i><div>METAL</div></section>
                     </section>
                     <ItemContainer>
                         <Item />

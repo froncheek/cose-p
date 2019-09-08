@@ -34,7 +34,6 @@ let plugins = [
   // })
   new CopyWebpackPlugin([{
     from:'./public', to:'./'
-
   }])
 ];
 

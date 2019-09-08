@@ -8,16 +8,14 @@ import App from '../client/index';
 const app = express();
 const port = 3000;
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
     fs.readFile(path.join(__dirname, './index.html'),'utf8',function(err,data){
-        //res.writeHead(200, {'Content-Type':'text/html'});
-        //res.send(data);
-        
-        res.send(data.replace('COSE',`${ReactDOMServer.renderToString(<App/>)}`));
-        //data.replace()    
-        //res.end();
+        res.send(data.replace('<div id="root"></div>',`${ReactDOMServer.renderToString(<App/>)}`));
     })
     /*res.send(`${ReactDOMServer.renderToString(<div>Hello Express React</div>)}`)*/
 })
+
+// app.use('/res', express.static(path.resolve('dist')));
+app.use(express.static(path.join(__dirname, 'res')));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

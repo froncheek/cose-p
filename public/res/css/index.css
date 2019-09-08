@@ -49,6 +49,12 @@ small {
     color: gray;
 }
 
+main article {
+    min-width: 768px;
+    max-width: 968px;
+    margin: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -74,7 +80,11 @@ small {
     /*padding-right: 10%;
     padding-left: 10%;*/
 }
-.nav-bar div{
+.nav-bar > div {
+    min-width: 768px;
+    max-width: 968px;
+}
+.nav-bar div div{
     float: left;
 
 }
@@ -117,4 +127,52 @@ small {
 
 .nav-icons{
     width: 30%;
+}
+
+.item {
+    display: inline-block;
+    margin: 10px;
+    width: 30%;
+}
+
+.item-image {
+    height: 150px;
+    min-width: 200px;
+    background-color: #f1f1f1;
+}
+
+.item-details {
+    background-color: rgb(98, 226, 183);
+    min-width: 200px;
+    height: 50px;
+}
+
+.banner {
+    background-color: rgb(98, 226, 183);
+    height: 200px;
+}
+
+.item-container > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+@media only screen and (max-width: 790px) {
+    main article {
+        min-width: 500px;
+    }
+
+    .nav-bar > div {
+        min-width: 500px;
+    }
+
+    .item-container > div {
+        justify-content: stretch;
+    }
+
+    .item {
+        width: 100%;
+        margin-right: 0px;
+    }
 }

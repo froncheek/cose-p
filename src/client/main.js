@@ -1,12 +1,13 @@
 import React from 'react';
+import Supplies from './Supplies';
 
 class Main extends React.Component{
     render() {
         return(
-            <main>
-                <section></section>
-                <section></section>
-                <section></section>
+            <main className="centered">
+                <article>
+                    <Supplies />
+                </article>
             </main>
         )
     }

@@ -1,17 +1,36 @@
 import React from 'react';
+import ItemContainer from './ItemContainer';
+import Item from './Item';
 
 class Nav extends React.Component{
     render() {
         return(
             <nav className='nav-bar centered'>
-                <div >
-                    <div className='nav-logo'></div>
-                    <div className='nav-search-bar'>
-                    <div className='nav-seach-input'>What are you trying to find?</div>
-                    <div className='nav-seach-button'></div>
+                <section className='nav-logo'>
+                </section>
+                <section className='nav-search-bar-wrap'>
+                    <div className="wrap">
+                        <div className="search">
+                            <input type="text" className="searchTerm" placeholder="What are you looking for?"/>
+                            <button type="submit" className="searchButton">
+                                <i className="fa fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div className='nav-icons'></div>
-                </div>
+                </section>
+                <section className='nav-icons'>
+                    <section>
+                        <div className="cartButton">
+                            <i className="fas fa-shopping-cart"></i>
+                        </div>
+                    </section>
+                   
+                    <section>
+                        <div className="cartButton user">
+                            <i className="fas fa-user"></i>
+                        </div>
+                    </section>
+                </section>
             </nav>
         )
     }

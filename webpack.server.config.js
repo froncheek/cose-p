@@ -43,9 +43,20 @@ let rules = [{
     ]
   }, {
     test: /\.(png|jpg|gif)$/,
-    use: [
-        'file-loader'
-    ]
+    use: [{
+      loader: 'file-loader',
+      options: {
+        name: './res/[hash].[ext]'
+      }
+    }]
+  }, {
+    test: /\.ttf$/,
+    use: [{
+      loader: 'ttf-loader',
+      options: {
+        name: './res/font/[hash].[ext]'
+      }
+    }]
   }
 ];
 

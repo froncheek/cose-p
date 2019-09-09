@@ -5,14 +5,12 @@ $text-color: #3B945E;
   display: flex;
   justify-content: center;
   background-color: #fafafa;
- 
 }
-
 
 .banner {
   background-color: white;
   width: 100%;
-  display: flex;
+  // display: flex;
 }
 
 .banner table {
@@ -20,27 +18,32 @@ $text-color: #3B945E;
   width: 100%;
   display: flex;
 }
-.banner table tbody{
-width: 100%;
-display: flex;
-}
-.banner table tr{
+
+.banner table tbody {
   width: 100%;
-display: flex;
+  display: flex;
 }
 
-.banner table tr td{
-  padding-left:10px;
-  padding-top:10px;
+.banner table tr {
+  width: 100%;
+  display: flex;
+}
+
+.category-container > div {
+  color: $text-color;
+}
+.banner table tr td {
+  padding-left: 10px;
+  padding-top: 10px;
   color: $text-color;
   width: 25%;
-  justify-content: 
 }
 
-.categories-title{
-  padding-left:15px !important;
-  padding-top:15px !important;
-  padding-bottom:15px !important;
+
+.categories-title {
+  padding-left: 15px !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
   border-bottom: $outline-color 0.01em solid;
   color: $text-color;
   font-weight: 600;
@@ -61,22 +64,25 @@ display: flex;
 }
 
 .category-details {
-  background-color:white;
+  background-color: white;
   min-width: 200px;
   height: 100%;
 }
 
-.category-container{
-height:100%;
-  
+.category-container {
+  height: 100%;
+
 }
 
-.category-wrap{
-  height:100%;
-  
+.category-wrap {
+  height: 100%;
+
 }
 
-.fa-plug{
+.fa-plug {}
 
-  
+.category-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
 }

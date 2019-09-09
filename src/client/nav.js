@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemContainer from './ItemContainer';
 import Item from './Item';
+import '../sass/nav.scss';
 
 class Nav extends React.Component{
     render() {

@@ -4,9 +4,10 @@ const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
+const IgnoreStyles = require('ignore-styles')
 
 let devtool, mode, watch;
-
+IgnoreStyles.default(['.sass', 'scss'])
 /*,
   {
     // Loads the javacript into html template provided.
@@ -15,23 +16,51 @@ let devtool, mode, watch;
     use: [{loader: "html-loader"}]
   }*/
 let rules = [{
-  // Transpiles ES6-8 into ES5
-  test: /\.js$/,
-  exclude: /node_modules/,
-  use: {
-    loader: "babel-loader",
-    options: {
-      presets: ['@babel/preset-env', '@babel/preset-react']
+    // Transpiles ES6-8 into ES5
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env', '@babel/preset-react']
+      }
     }
+  },/* {
+    test: /\.s(c|a)ss$/,
+    use: [
+        // fallback to style-loader in development
+        'style-loader'
+    ]
+  }, */{
+    test: /\.s(c|a)ss$/,
+    use: [
+        "css-loader"
+    ]
+  }, {
+    test: /\.s(c|a)ss$/,
+    use: [
+        "sass-loader"
+    ]
+  }, {
+    test: /\.(png|jpg|gif)$/,
+    use: [
+        'file-loader'
+    ]
   }
-}];
+];
 
 let plugins = [
   // new HtmlWebPackPlugin({
   //   template: "./index.html",
   //   filename: "./public/index.html",
   //   excludeChunks: [ 'server' ]
-  // })
+  // }),
+  // new MiniCssExtractPlugin({
+  //   // Options similar to the same options in webpackOptions.output
+  //   // both options are optional
+  //   filename: "[name].css",
+  //   chunkFilename: "[id].css"
+  // }),
   new CopyWebpackPlugin([{
     from:'./public', to:'./'
   }])

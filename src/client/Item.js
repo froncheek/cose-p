@@ -5,7 +5,7 @@ class Item extends React.Component{
         return(
             <div className="item">
                 <div className="item-image"></div>
-                <div className="item-details">Details</div>
+                <div className="item-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
             </div>
         )
     }

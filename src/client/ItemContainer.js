@@ -8,7 +8,7 @@ class ItemContainer extends React.Component{
     render() {
         return(
             <section className="item-container">
-                <h3>Items</h3>
+                <h4 className="categories-title">ITEMS</h4>
                 <div>
                     {this.props.children}
                 </div>

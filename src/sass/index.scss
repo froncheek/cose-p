@@ -59,7 +59,7 @@ main article {
 
 @font-face {
     font-family: Gidole;
-    src: url(../font/Gidole-Regular.ttf);
+    // src: url(../font/Gidole-Regular.ttf);
     font-size: 200px !important;
     
 }
@@ -69,7 +69,7 @@ main article {
 .item {
     display: inline-block;
     margin: 10px;
-    width: 30%;
+    width: 22%;
 }
 
 .item-image {
@@ -79,9 +79,11 @@ main article {
 }
 
 .item-details {
-    background-color: rgb(98, 226, 183);
-    min-width: 200px;
-    height: 50px;
+    color: white;
+    background-color: forestgreen;
+    min-width: 190px;
+    min-height: 40px;
+    padding: 10px;
 }
 
 
@@ -89,6 +91,12 @@ main article {
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;
+}
+
+@media only screen and (max-width: 890px) {
+    .item {
+        width: 30%;
+    }
 }
 
 @media only screen and (max-width: 790px) {
@@ -105,7 +113,7 @@ main article {
     }
 
     .item {
-        width: 100%;
+        width: 45%;
         margin-right: 0px;
     }
 }

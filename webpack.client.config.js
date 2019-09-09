@@ -33,14 +33,19 @@ let rules = [
       }
     }
   }, {
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader']
-  }, {
-    test: /\.scss$/,
+    test: /\.(css|scss)$/,
     use: [
         // fallback to style-loader in development
-        mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-        "css-loader",
+        mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader
+    ]
+  }, {
+    test: /\.s(c|a)ss$/,
+    use: [
+        "css-loader"
+    ]
+  }, {
+    test: /\.s(c|a)ss$/,
+    use: [
         "sass-loader"
     ]
   }, {
@@ -50,8 +55,7 @@ let rules = [
             loader: 'file-loader'
         }
     ]
-  },
-  {
+  }, {
     // Loads the javacript into html template provided.
     // Entry point is set below in HtmlWebPackPlugin in Plugins 
     test: /\.html$/,
@@ -89,6 +93,10 @@ module.exports = {
   //externals: [nodeExternals()], // Need this to avoid error when working with Express
   module: {
     rules
+  },
+  resolve: {
+    modules: [path.resolve('./node_modules'), path.resolve('./src')],
+    extensions: ['.json', '.js', 'css', '.scss']
   },
   plugins
 }

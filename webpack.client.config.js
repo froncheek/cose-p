@@ -34,10 +34,13 @@ let rules = [
     }
   }, {
     test: /\.(css|scss)$/,
-    use: [
-        // fallback to style-loader in development
-        mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader
-    ]
+    use: [{
+      // fallback to style-loader in development
+      loader: mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+      options: {
+        name: './[hash].[ext]'
+      }
+    }]
   }, {
     test: /\.s(c|a)ss$/,
     use: [
@@ -80,7 +83,7 @@ let plugins = [
   new MiniCssExtractPlugin({
     // Options similar to the same options in webpackOptions.output
     // both options are optional
-    filename: "[name].css",
+    filename: "[hash].css",
     chunkFilename: "[id].css"
   }),
   new CopyWebpackPlugin([{
@@ -96,7 +99,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist/res'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[hash].js'
   },
   //externals: [nodeExternals()], // Need this to avoid error when working with Express
   module: {

@@ -1,59 +1,17 @@
-.centered {
-  display: flex;
-  justify-content: center;
-  background-color: #fafafa;
-}
+/* Error: Expected expression.
+ *    ,
+ * 37 |   justify-content: 
+ *    |                    ^
+ *    '
+ *   scss\main.scss 37:20  root stylesheet */
 
-.banner {
-  background-color: white;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected expression.\a    \2577 \a 37 \2502    justify-content: \d\a    \2502                     ^\a    \2575 \a   scss\\main.scss 37:20  root stylesheet";
 }
-
-.banner section {
-  float: left;
-  width: 23%;
-  padding-left: 10px;
-  padding-top: 10px;
-  color: #3B945E;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-}
-
-.categories-title {
-  padding-left: 15px !important;
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
-  border-bottom: #57BA98 0.01em solid;
-  color: #3B945E;
-  font-weight: 600;
-}
-
-.category {
-  display: inline-block;
-  width: 22.5%;
-  border-right: #57BA98 0.01em solid;
-  height: 100%;
-}
-
-.category-image {
-  height: 150px;
-  min-width: 200px;
-  background-color: white;
-  border-right: #57BA98 0.01em solid;
-}
-
-.category-details {
-  background-color: white;
-  min-width: 200px;
-  height: 100%;
-}
-
-.category-container {
-  height: 100%;
-}
-
-.category-wrap {
-  height: 100%;
-}
-
-/*# sourceMappingURL=main.css.map */

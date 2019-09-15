@@ -20,12 +20,13 @@ const useStyles = (theme => ({
         flexGrow: 1,
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        //marginRight: theme.spacing(2),
     },
     title: {
         flexGrow: 1,
     },
     search: {
+        flexGrow: 1,
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
         backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -62,7 +63,7 @@ const useStyles = (theme => ({
     },
     sectionDesktop: {
         display: 'none',
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
           display: 'flex',
         },
     }
@@ -77,8 +78,8 @@ class Nav extends React.Component{
                 <IconButton edge="start" color="inherit" aria-label="menu">
                     <MenuIcon />
                 </IconButton>
-                <Typography variant="h6" color="inherit" className={classes.root}>
-                    cose-p
+                <Typography variant="h6" color="inherit" className={classes.sectionDesktop}>
+                    cosee-p
                 </Typography>
                 <div className={classes.search}>
                     <div className={classes.searchIcon}>
@@ -94,7 +95,7 @@ class Nav extends React.Component{
                     />
                 </div>
                 <div className={classes.grow} />
-                <div className={classes.sectionDesktop}>
+                <div >
                     <IconButton
                         edge="end"
                         aria-label="account of current user"

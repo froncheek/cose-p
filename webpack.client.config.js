@@ -107,7 +107,10 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve('./node_modules'), path.resolve('./src')],
-    extensions: ['.json', '.js', 'css', '.scss']
+    extensions: ['.json', '.js', 'css', '.scss'],
+    // alias: {
+    //   "@material-ui/styles": path.resolve(__dirname, "node_modules", "@material-ui/styles"),
+    // }
   },
   plugins
 }

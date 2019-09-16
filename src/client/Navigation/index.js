@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 /* ICONS */
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/List';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 

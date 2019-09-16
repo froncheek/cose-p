@@ -1,8 +1,11 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles'
-import {Tabs, Tab, Paper, Typography} from '@material-ui/core';
+import {Tabs, Tab, Paper, Typography, Box} from '@material-ui/core';
 import { Work, Home, Shop } from '@material-ui/icons';
-import Dashboard from '../Dashboard';
+
+import HomePage from '../Home';
+import Opportunity from '../Opportunities';
+import OAS from '../OffersAndServices';
 
 const useStyles = (theme => ({
     sectionDesktop: {
@@ -12,6 +15,24 @@ const useStyles = (theme => ({
         },
     }
 }))
+
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <Typography
+        component="div"
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        <Box p={3}>{children}</Box>
+      </Typography>
+    );
+  }
+
 
 class Main extends React.Component{
     constructor(props) {
@@ -34,7 +55,7 @@ class Main extends React.Component{
             <Paper>
                 <Tabs
                     value={this.state.value}
-                    onChange={this.handleChange}
+                    onChange={this.handleChange.bind(this)}
                     indicatorColor="primary"
                     textColor="primary"
                     variant="fullWidth"
@@ -44,7 +65,15 @@ class Main extends React.Component{
                     <Tab label={<Typography variant="caption" className={classes.sectionDesktop}>Offers & Services</Typography>} icon={<Shop />}/>
                 </Tabs>
             </Paper>
-            <Dashboard />
+            <TabPanel value={this.state.value} index={0}>
+                <HomePage />
+            </TabPanel>
+            <TabPanel value={this.state.value} index={1}>
+                <Opportunity />
+            </TabPanel>
+            <TabPanel value={this.state.value} index={2}>
+                <OAS />
+            </TabPanel>
         </main>
         )
     }
